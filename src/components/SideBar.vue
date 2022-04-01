@@ -1,7 +1,7 @@
 <template>
   <div style="float: right; width: 300px;">
-    <img src="../assets/favpng_coffee-cup-cappuccino-clip-art.png" style="float: left;" alt="burger" width="25px" />
-    <aside class="menu" >
+    <img v-on:click="toggle = !toggle" style="positon: absolute;" src="../assets/favpng_coffee-cup-cappuccino-clip-art.png" alt="burger" width="50" />
+    <aside v-if="toggle" class="menu" >
       <p class="menu-label">
         Shopping Cart
       </p>
