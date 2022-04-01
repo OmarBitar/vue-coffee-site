@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+   <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
@@ -16,3 +15,14 @@ export default {
   }
 }
 </script>
+<style>
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+</style>
