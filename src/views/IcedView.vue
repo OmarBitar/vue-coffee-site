@@ -20,12 +20,14 @@ export default {
 </script>
 
 <template>
+    <img src="@/assets/favpng_coffee-milk-latte-macchiato-cappuccino.png" alt="hot coffe icon" width="100">
     <div v-if="error">Oops! Error encountered: {{ error.message }}</div>
     <div v-else-if="data">
-        <card class="columns"
+        <Card
             v-for="drink in this.data"
             v-bind:drink="drink"/>
-    </div>
+        </div>
+
     <div v-else>Loading...</div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <div style="float: right; width: 300px;">
+  <div style="float: right;display:block">
     <img
       v-on:click="toggle = !toggle"
       style="float:right;display:block;"

@@ -20,6 +20,7 @@ export default {
 </script>
 
 <template>
+    <img src="@/assets/favpng_coffee-cup-cafe-cream-clip-art.png" alt="hot coffe icon" width="100">
     <div v-if="error">Oops! Error encountered: {{ error.message }}</div>
     <div v-else-if="data">
         <card
