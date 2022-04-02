@@ -1,9 +1,10 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/hot">Hot</router-link> |
+    <router-link to="/iced">iced</router-link>
   </nav>
-  <SideBar />
+  <SideBar style="float:right;display:block"/>
   <router-view/>
 </template>
 

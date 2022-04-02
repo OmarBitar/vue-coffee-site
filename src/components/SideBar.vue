@@ -1,7 +1,10 @@
 <template>
   <div style="float: right; width: 300px;">
-    <img v-on:click="toggle = !toggle" style="positon: absolute;" src="../assets/favpng_coffee-cup-cappuccino-clip-art.png" alt="burger" width="50" />
-    <aside v-if="toggle" class="menu" >
+    <img
+      v-on:click="toggle = !toggle"
+      style="float:right;display:block;"
+      src="../assets/favpng_coffee-cup-cappuccino-clip-art.png" alt="burger" width="50" />
+    <aside v-show="toggle" class="menu" >
       <p class="menu-label">
         Shopping Cart
       </p>
@@ -31,6 +34,11 @@
 
 <script>
 export default {
-  name: 'SideBar'
+  name: 'SideBar',
+  data() {
+    return {
+      toggle: true
+    }
+  },
 }
 </script>

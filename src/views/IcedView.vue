@@ -2,7 +2,7 @@
 import { useFetch } from '@/fetch.js'
 import Card from '@/components/Card.vue'
 export default {
-  name: 'HotView',
+  name: 'IcedView',
   data() {
       return {
           data: null,
@@ -10,7 +10,7 @@ export default {
       }
   },
   created() {
-      this.data = useFetch('hot')
+      this.data = useFetch('iced')
       console.log(this.data)
   },
   components: {
@@ -22,7 +22,7 @@ export default {
 <template>
     <div v-if="error">Oops! Error encountered: {{ error.message }}</div>
     <div v-else-if="data">
-        <card
+        <card class="columns"
             v-for="drink in this.data"
             v-bind:drink="drink"/>
     </div>
