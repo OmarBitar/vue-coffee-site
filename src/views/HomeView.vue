@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-   <HelloWorld msg="Welcome to Your Vue.js App"/>
+   <p>Welcome to the demo coffef app made in Vue.js</p>
+   <img src="@/assets/favpng_iced-coffee-cafe-coffeemaker.png" width="500" alt="">
   </div>
 </template>
 
