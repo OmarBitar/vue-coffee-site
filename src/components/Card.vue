@@ -10,7 +10,7 @@ export default {
 </script>
 <template>
     <div class="card"
-    style="display: inline-block;width: 250px; height: 200px; margin: 20px;">
+    style="width: 250px; height: 200px; margin: 40px; display: inline-block">
        <div class="card-conetent" >
            <header class="card-header">
                    <p class="card-header-title">
