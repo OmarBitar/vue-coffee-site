@@ -1,11 +1,24 @@
 <script>
+import {store} from '../store'
+import {ref} from 'vue'
 export default {
     data() {
         return {
-            count: 0
+            store,
+            count: ref(0)
         }
     },
-    props: ['drink']
+    props: ['drink'],
+    methods: {
+        decrement(){
+            (this.count != 0) ? this.count-- : this.count = 0
+            store.decrement(this.drink.title,this.drink.id,this.count)
+        },
+        increment(){
+            this.count++
+            store.increment(this.drink.title,this.drink.id,this.count)
+        }
+    },
 }
 </script>
 <template>
@@ -21,9 +34,9 @@ export default {
                {{drink.description}}
            </div>
            <footer class="card-footer">
-               <a v-on:click="(this.count != 0) ? this.count-- : this.count = 0" class="card-footer-item">-</a>
-               <a  class="card-footer-item">{{this.count}}</a>
-               <a v-on:click="this.count++" class="card-footer-item">+</a>
+               <a v-on:click="decrement(drink)" class="card-footer-item">-</a>
+               <a  class="card-footer-item">{{count}}</a>
+               <a v-on:click="increment(drink)" class="card-footer-item">+</a>
            </footer>
        </div>
    </div>
