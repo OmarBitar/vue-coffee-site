@@ -4,7 +4,7 @@
     <router-link to="/hot">Hot</router-link> |
     <router-link to="/iced">iced</router-link>
   </nav>
-  <SideBar style="float:right;display:block"/>
+  <SideBar />
   <router-view/>
 </template>
 

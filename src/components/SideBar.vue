@@ -1,10 +1,11 @@
 <template>
-  <div style="float: right;display:block;width:400px">
-    <img
+ <img
       v-on:click="toggle = !toggle"
-      style="float:right;display:block;"
+      style="z-index: 2;position: fixed;right:0"
       src="../assets/favpng_coffee-cup-cappuccino-clip-art.png" alt="burger" width="50" />
-    <aside v-show="toggle" class="menu" >
+  <div v-show="toggle"
+   style="overflow:auto;max-height: 70%;box-shadow: 0 8px 8px 0 #808080;position: fixed; width: 50%;z-index: 1; right: 10px;background-color:white;float: right">
+       <aside class="menu" >
       <p class="menu-label">
         Shopping Cart
       </p>
