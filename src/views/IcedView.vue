@@ -9,9 +9,9 @@ export default {
 
       }
   },
-  created() {
-      this.data = useFetch('iced')
-      console.log(this.data)
+  async mounted() {
+    const baseURL = 'https://api.sampleapis.com/coffee/iced'
+    this.data = await useFetch(baseURL)
   },
   components: {
       Card

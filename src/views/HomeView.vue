@@ -1,6 +1,7 @@
 <template>
   <div class="home">
    <p>Welcome to the demo coffef app made in Vue.js</p>
+   <p>this site uses an <a href="https://sampleapis.com/api-list/coffee">API</a> to fetch it's coffee data</p>
    <img src="@/assets/favpng_iced-coffee-cafe-coffeemaker.png" width="500" alt="">
   </div>
 </template>
