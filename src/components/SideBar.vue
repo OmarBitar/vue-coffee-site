@@ -12,6 +12,9 @@
       <ul class="menu-list">
         <li>
           <ul>
+            <a v-if="store.drinks.length == 0" class="card-footer-item">
+              Shopping Cart Empty
+            </a>
             <li v-for="drink in store.drinks">
               <a>
                 <footer class="card-footer">
