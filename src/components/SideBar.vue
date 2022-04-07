@@ -1,10 +1,11 @@
 <template>
  <img
-      v-on:click="toggle = !toggle"
-      style="z-index: 2;position: fixed;right:0"
+      v-on:click="coffeeToggle"
+      class="coffeeMenue"
+      v-bind:class='{ coffeeMenue: this.toggle, coffeeMenueToggle: !this.toggle }'
       src="../assets/favpng_coffee-cup-cappuccino-clip-art.png" alt="burger" width="50" />
   <div v-show="toggle"
-   style="overflow:auto;max-height: 70%;box-shadow: 0 8px 8px 0 #808080;position: fixed; width: 50%;z-index: 1; right: 10px;background-color:white;float: right">
+   class="sidebar">
        <aside class="menu" >
       <p class="menu-label">
         Shopping Cart
@@ -38,9 +39,39 @@ export default {
   name: 'SideBar',
   data() {
     return {
-      toggle: true,
+      toggle: false,
       store
+    }
+  },
+  methods: {
+    coffeeToggle() {
+      this.toggle = !this.toggle
     }
   },
 }
 </script>
+
+<style scoped>
+
+.sidebar {
+  overflow:auto;
+  max-height: 70%;
+  box-shadow: 0 8px 8px 0 #808080;
+  position: fixed;
+   width: 50%;
+   z-index: 1;
+  right: 10px;
+  background-color:white;float: right
+}
+@media (max-width: 800px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+.coffeeMenue {
+  z-index: 2;position: fixed;right:0
+}
+.coffeeMenueToggle {
+  transform: rotate(-90deg);
+}
+</style>

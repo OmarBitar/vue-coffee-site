@@ -34,9 +34,9 @@ export default {
                {{drink.description}}
            </div>
            <footer class="card-footer">
-               <a v-on:click="decrement(drink)" class="card-footer-item">-</a>
+               <a v-on:click="decrement(drink)" class="card-footer-item" style="user-select: none;">-</a>
                <a  class="card-footer-item">{{count}}</a>
-               <a v-on:click="increment(drink)" class="card-footer-item">+</a>
+               <a v-on:click="increment(drink)" class="card-footer-item" style="user-select: none;">+</a>
            </footer>
        </div>
    </div>
