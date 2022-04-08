@@ -10,10 +10,26 @@
 
 <script>
 import SideBar from './components/SideBar.vue'
-export default {
-  components: {
-    SideBar
-  }
+import {store} from './store.js'
+import {useFetch} from './fetch.js'
+  export default {
+    components: {
+      SideBar
+    },
+    async created() {
+    const baseURL = "https://api.sampleapis.com/coffee";
+    store.iceDrinks = await useFetch(baseURL + "/iced");
+    store.iceDrinks.map((coffee) => {
+      coffee.count = 0;
+      coffee.type = "ice";
+    });
+
+    store.hotDrinks = await useFetch(baseURL + "/hot");
+    store.hotDrinks.map((coffee) => {
+      coffee.count = 0;
+      coffee.type = "hot";
+    });
+  },
 }
 </script>
 

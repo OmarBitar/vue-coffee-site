@@ -13,15 +13,15 @@
       <ul class="menu-list">
         <li>
           <ul>
-            <a v-if="store.drinks.length == 0" class="card-footer-item">
+            <a v-if="drinks.length == 0" class="card-footer-item">
               Shopping Cart Empty
             </a>
-            <li v-for="drink in store.drinks">
+              <li v-for="(drink, index) in drinks" :key="index">
               <a>
                 <footer class="card-footer">
-                    <a  class="card-footer-item">{{drink.drinkName}}</a>
-                    <a  class="card-footer-item">{{drink.drinkCount}}</a>
-                    <button v-on:click="store.remove(drink.drinkID)" class="card-footer-item">remove</button>
+                    <a  class="card-footer-item">{{drink.title}}</a>
+                    <a  class="card-footer-item">{{drink.count}}</a>
+                    <button v-on:click="store.remove(drink.type, drink.id)" class="card-footer-item">remove</button>
                 </footer>
               </a>
             </li>
@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import {store} from '../store'
+import {store} from '../store.js'
 export default {
   name: 'SideBar',
   data() {
@@ -47,6 +47,12 @@ export default {
     coffeeToggle() {
       this.toggle = !this.toggle
     }
+  },
+  computed: {
+    drinks() {
+      const drinks = [...store.hotDrinks, ...store.iceDrinks];
+      return drinks.filter((drink) => drink.count > 0);
+    },
   },
 }
 </script>
