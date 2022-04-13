@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import HotView from '../views/HotView.vue'
 import IcedView from '@/views/IcedView.vue'
+import Reviews from '@/views/Reviews.vue'
 
 const routes = [
   {
@@ -18,6 +19,12 @@ const routes = [
     path: '/iced',
     name: 'iced',
     component: IcedView
+  },
+  {
+    path: '/reviews/:drinkName',
+    name: 'reviews',
+    component: Reviews,
+    props: true
   }
 ]
 

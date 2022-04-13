@@ -5,15 +5,25 @@ export default {
 };
 </script>
 <template>
-    <div class="card"
-    style="width: 250px; height: 200px; margin: 20px; display: inline-block">
-       <div class="card-conetent" >
-           <header class="card-header">
+    <div class="card">
+       <div class="card-conetent">
+           <header class="card-header" style="z-index=0">
                    <p class="card-header-title">
                        {{drink.title}}
                    </p>
-               </header>
+            </header>
            <div class="conetnt" style="height:100px;overflow:auto;">
+               <div class="review"
+                    v-on:click="this.$router.push({
+                        name: `reviews`,
+                        params: {
+                            drinkName : drink.title,
+                            drinkDescription: drink.description,
+                        }
+                    })"
+                >
+                    write a review
+               </div>
                {{drink.description}}
            </div>
            <footer class="card-footer">
@@ -24,3 +34,24 @@ export default {
        </div>
    </div>
 </template>
+<style>
+.review {
+    opacity: 0;
+    /* filter:alpha(opacity=0); */
+    z-index: 1;
+    position: absolute;
+    height: inherit;
+    width: 100%;
+    text-align: center;
+}
+.review:hover {
+    opacity: 1;
+    /* filter:alpha(opacity=100); */
+    background-color: lightgrey;
+}
+.card {
+    width: 250px; height: 200px;
+    margin: 20px;
+    display: inline-block;
+}
+</style>
